@@ -30,15 +30,30 @@
 
 <style>
 
+
     .category-label
     {
-        padding: 0px 50px 0px 10px;     
+        padding: 5px 50px 5px 10px;     
         position: sticky;
         top: 0px;   
         background-color: white;
         font-size: 24;
         font-weight: bold;
         width: 100%;
+        border: 2px solid black;
+        border-radius: 15px;
+        margin-bottom: 4px;
+    }
+    
+    #swipe-zone > *:not(.category-label):nth-of-type(2n)
+    {
+        background-color: #e1e1e1;
+    }
+    #swipe-zone > *:not(.category-label)
+    {
+        width: 100%;
+        
+        padding: 5px 20px 5px 15px;
     }
 
     body
@@ -56,5 +71,5 @@
         justify-items: center;
         overflow: auto;
         height: auto;
-    }    
+    }      
 </style>
