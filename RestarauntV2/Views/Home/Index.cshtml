@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string characters = "abcdefghijklmnopqrstuvwxyz1234567890";
+    char selectOne()=> characters[new Random().Next(characters.Length)];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div id="swipe-zone">
+    <div id="menu-item-a" class="category-label">
+        <div>Omelette</div>
+    </div>
+    @for (int i = 0; i < 10; i++)
+    {
+    <div>@(string.Join("",Enumerable.Range(0, 10).Select(a=>selectOne())))</div>
+    }
+    <div id="menu-item-b" class="category-label">
+        <div>Drinks</div>
+    </div>
+    @for (int i = 0; i < 10; i++)
+    {
+    <div>@(string.Join("",Enumerable.Range(0, 10).Select(a=>selectOne())))</div>
+    }
+    <div id="menu-item-c" class="category-label" style="width: 100%; height: 2000px; background-color: #e1e1e1">
+        <div>Misc</div>
+    </div>
+</div>
+
+<style>
+
+    .category-label
+    {
+        padding: 0px 50px 0px 10px;     
+        position: sticky;
+        top: 0px;   
+        background-color: white;
+        font-size: 24;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    body
+    {
+        width: 100%;
+        overflow: hidden;
+        margin: 0px;
+        display: grid;
+    }
+    
+    #swipe-zone
+    {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        overflow: auto;
+        height: auto;
+    }    
+</style>
